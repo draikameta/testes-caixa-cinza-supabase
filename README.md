@@ -215,9 +215,9 @@ Dos 5 cenários executados, os 5 tiveram o resultado esperado (5 sucessos e 0 fa
 
 # Conclusão
 
-**Execução dos testes:** os testes foram executados corretamente. Os cinco cenários obrigatórios foram cobertos no Postman e todos os resultados foram registrados com prints e na planilha.
+**Execução dos testes:** todos testes foram executados corretamente. Os cinco cenários obrigatórios foram cobertos no Postman e todos os resultados foram registrados com prints e na planilha.
 
-**Funcionamento da autenticação:** a autenticação funcionou como esperado. O usuário válido recebeu o access token, e todas as tentativas inválidas foram bloqueadas com erro 400 e mensagem apropriada, sem retornar token.
+**Funcionamento da autenticação:** a autenticação proposta funcionou como esperado. O usuário válido recebeu o access token, e todas as tentativas inválidas foram bloqueadas com erro 400 e mensagem apropriada*, sem retornar token.
 
 **Dificuldades encontradas:** a principal dificuldade foi a instalação do Postman Desktop, porque o download do instalador foi extremamente lento e instável na minha conexão, o que atrasou o início da etapa de testes.
 
@@ -225,10 +225,10 @@ Dos 5 cenários executados, os 5 tiveram o resultado esperado (5 sucessos e 0 fa
 
 **Melhorias possíveis:**
 
-- automatizar as verificações com scripts na aba *Tests* do Postman (assertions de status e de campos do JSON);
+- possivelmente automatizar as verificações com scripts na aba de *Tests* do Postman (assertions de status e de campos do JSON);
 - executar a collection de forma automatizada com o Newman, inclusive em pipelines de CI;
-- ampliar a cobertura com mais cenários (e-mail com espaços, senha muito longa, caracteres especiais, múltiplas tentativas seguidas para observar bloqueio por limite de requisições, token expirado);
+- ampliar a cobertura com mais cenários (e-mail com espaços, senha muito longa ou curta, caracteres especiais, múltiplas tentativas seguidas para observar bloqueio por limite de requisições, token expirado);
 - testar também o fluxo de refresh token e o logout;
-- separar os dados sensíveis (chaves e senhas) em variáveis secretas do Postman.
+- separar os dados sensíveis (chaves e senhas) em novas variáveis secretas do Postman.
 
 **Importância dos testes caixa cinza em APIs:** como o testador conhece o endpoint, os headers e o formato dos dados, é possível montar cenários mais precisos e eficientes do que em um teste totalmente às cegas, e sem precisar de acesso ao código-fonte. Em APIs de autenticação isso é especialmente importante, porque falhas de validação ou de tratamento de erros podem permitir acesso indevido, expor informações demais nas mensagens ou comprometer a segurança dos usuários.
